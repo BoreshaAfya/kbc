@@ -1,12 +1,16 @@
 package app.amaroll.loise.kbc;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
+
+import app.amaroll.loise.kbc.Fragments.NewsUpdates;
+import app.amaroll.loise.kbc.Fragments.SocialMedia;
 
 
 public class MainActivity extends ActionBarActivity
@@ -35,9 +39,30 @@ public class MainActivity extends ActionBarActivity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
-        Toast.makeText(this, "Menu item selected -> " + position, Toast.LENGTH_SHORT).show();
-    }
+        android.support.v4.app.Fragment mFragment = null;
+        FragmentManager mFragmentManager = getSupportFragmentManager();
+        FragmentTransaction ft = mFragmentManager.beginTransaction();
 
+        switch (position){
+            case 0 :
+                mFragment = new NewsUpdates();
+                break;
+            case 1:
+                mFragment = new SocialMedia();
+                break;
+//            case 2:
+//                mFragment = new Vote();
+//                break;
+
+            default:
+                break;
+        }
+
+        if (mFragment != null){
+            mFragmentManager.beginTransaction().replace(R.id.container, mFragment).commit();
+        }
+
+    }
 
     @Override
     public void onBackPressed() {

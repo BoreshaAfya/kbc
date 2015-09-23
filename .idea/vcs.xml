@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+<<<<<<< HEAD
     <mapping directory="C:\Users\muli\AndroidStudioProjects\kbcandroid\kbc" vcs="Git" />
+=======
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+>>>>>>> 5c9694a7d5d283fff5dcd6831f397723e8eb2f07
   </component>
 </project>

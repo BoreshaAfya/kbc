@@ -2,6 +2,7 @@ package app.amaroll.loise.kbc;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,13 +11,23 @@ import android.widget.Button;
 
 public class splashScreen extends AppCompatActivity implements View.OnClickListener {
     Button btnClick;
+    private final int SPLASH_DISPLAY_LENGTH = 5000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        btnClick = (Button)findViewById(R.id.button);
-        btnClick.setOnClickListener(this);
+
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                Intent mainIntent = new Intent(splashScreen.this, MainActivity.class);
+                splashScreen.this.startActivity(mainIntent);
+                splashScreen.this.finish();
+            }
+        }, SPLASH_DISPLAY_LENGTH);
+
+//        btnClick = (Button)findViewById(R.id.button);
+//        btnClick.setOnClickListener(this);
     }
     @Override
     public void onClick(View view) {
