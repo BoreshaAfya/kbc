@@ -11,6 +11,7 @@ import android.view.MenuItem;
 
 import app.amaroll.loise.kbc.Fragments.NewsUpdates;
 import app.amaroll.loise.kbc.Fragments.SocialMedia;
+import app.amaroll.loise.kbc.Fragments.Stations;
 
 
 public class MainActivity extends ActionBarActivity
@@ -50,9 +51,9 @@ public class MainActivity extends ActionBarActivity
             case 1:
                 mFragment = new SocialMedia();
                 break;
-//            case 2:
-//                mFragment = new Vote();
-//                break;
+            case 2:
+                mFragment = new Stations();
+              break;
 
             default:
                 break;

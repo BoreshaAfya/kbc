@@ -3,7 +3,6 @@ package app.amaroll.loise.kbc;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-
 import app.amaroll.loise.kbc.Fragments.radio;
 import app.amaroll.loise.kbc.Fragments.tv;
 
@@ -15,7 +14,7 @@ public class StationsViewPagerAdapter extends FragmentStatePagerAdapter{
     int NumbOfTabs; // Store the number of tabs, this will also be passed when the ViewPagerAdapter is created
 
 
-    public StationsViewPagerAdapter(android.app.FragmentManager fm, CharSequence mTitles[],int mNumbOfTabsumb ) {
+    public StationsViewPagerAdapter(FragmentManager fm, CharSequence mTitles[],int mNumbOfTabsumb ) {
         super(fm);
 
         this.Titles = mTitles;
@@ -30,7 +29,7 @@ public class StationsViewPagerAdapter extends FragmentStatePagerAdapter{
             tv tvtab = new tv();
             return tvtab;
         }
-        else             // As we are having 2 tabs if the position is now 0 it must be 1 so we are returning second tab
+        else   // As we are having 2 tabs if the position is now 0 it must be 1 so we are returning second tab
         {
             radio radiotab = new radio();
             return radiotab;
@@ -47,6 +46,7 @@ public class StationsViewPagerAdapter extends FragmentStatePagerAdapter{
 
     @Override
     public int getCount() {
+
         return NumbOfTabs;
     }
 }

@@ -9,7 +9,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Tab radios"
         android:id="@+id/textView"
-        android:textColor="@color/myPrimaryColor"
+        android:textColor="@color/tabsScrollColor"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
